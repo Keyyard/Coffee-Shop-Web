@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .hide_scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .hide_scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet/dist/leaflet.css"
+      integrity="sha512-+hLdBStnxzEOV75XmU0e8rvbUpu4M2qGUBHa2Q6QQsQ+8GCq8K3i4UpxLrUf4oz+VlR5Ogbr5Dv7vf8RO5lYbA=="
+      crossorigin=""
+    />
+  </head>
+  <body class="bg-[#1C0A00] hide_scrollbar">
+    <nav class="bg-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 justify-between">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <p class="text-3xl font-bold mb-2 text-[#F8FAE5]">tmh coffees</p>
+            </div>
+          </div>
+          <div class="hidden md:block mt-4">
+            <div class="flex items-center justify-end space-x-4">
+              <a
+                href="#landing"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >Home</a
+              >
+              <a
+                href="#stories"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >Stories</a
+              >
+              <a
+                href="#menu"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >Menu</a
+              >
+              <a
+                href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div>
+      <a href="#landing" class="fixed bottom-8 right-8 p-4">
+        <i class="fa-solid fa-caret-up fa-2xl" style="color: #ffffff"></i>
+      </a>
+    </div>
+    <div
+      id="landing"
+      class="h-screen flex items-center justify-center bg-cover bg-center relative"
+    >
+      <img
+        src="landing_img.png"
+        class="absolute inset-0 w-full h-full object-cover"
+        alt="Coffee Shop"
+      />
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+      <div class="text-white z-10 text-center">
+        <h1 class="text-6xl font-bold">tmh's coffee house</h1>
+        <p class="text-lg mt-4 text-2xl pb-4">
+          Discover the perfect brew just for you!
+        </p>
+        <a
+          href="#stories"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded"
+          >Get Started</a
+        >
+      </div>
+    </div>
+    <div class="w-full border border-grey-400 opacity-55"></div>
+    <div id="stories">
+      <div class="mt-8 flex justify-center">
+        <div class="text-[#F8FAE5] rounded-xl mx-4 shadow-md w-[80%] flex">
+          <img src="story.png" alt="Story" class="m-4 w-[15rem] rounded-full" />
+          <div class="p-4">
+            <h2 class="text-5xl font-bold mb-2">Coffee Story</h2>
+            <p class="text-xl">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Vehicula ipsum a arcu cursus vitae congue. Faucibus turpis in eu
+              mi. Ante in nibh mauris cursus mattis. Suspendisse sed nisi lacus
+              sed viverra tellus in hac habitasse. Sed vulputate mi sit amet
+              mauris commodo quis. Non arcu risus quis varius quam quisque id
+              diam. Amet tellus cras adipiscing enim eu. Risus in hendrerit
+              gravida rutrum quisque non tellus orci. Vivamus arcu felis
+              bibendum ut tristique et. Ac tincidunt vitae semper quis lectus
+              nulla at volutpat. Ligula ullamcorper malesuada proin libero nunc
+              consequat. Enim tortor at auctor urna nunc id. Consectetur
+              adipiscing elit ut aliquam purus sit. A lacus vestibulum sed arcu
+              non odio euismod lacinia at. In eu mi bibendum neque egestas.
+              Pulvinar etiam non quam lacus suspendisse faucibus. In metus
+              vulputate eu scelerisque felis. Ut etiam sit amet nisl purus in
+              mollis. Aliquam purus sit amet luctus venenatis lectus magna
+              fringilla. Sit amet mauris commodo quis imperdiet massa tincidunt.
+              Libero id faucibus nisl tincidunt eget nullam non nisi. Pretium
+              quam vulputate dignissim suspendisse. Maecenas sed enim ut sem
+              viverra aliquet eget. Vel pretium lectus quam id leo in vitae. Sit
+              amet tellus cras adipiscing enim eu turpis. Vel risus commodo
+              viverra maecenas accumsan lacus vel. Quis imperdiet massa
+              tincidunt nunc. Eget mauris pharetra et ultrices neque. Fermentum
+              et sollicitudin ac orci phasellus.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 flex justify-center">
+        <div class="text-[#F8FAE5] rounded-xl mx-4 shadow-md w-[80%]">
+          <div class="text-center">
+            <h1 class="text-8xl font-bold mb-2">tmh's story</h1>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 flex justify-center">
+        <div class="text-[#F8FAE5] rounded-xl mx-4 shadow-md w-[80%] flex">
+          <div class="p-4">
+            <h2 class="text-5xl font-bold mb-2">Coffee Story</h2>
+            <p class="text-xl">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Vehicula ipsum a arcu cursus vitae congue. Faucibus turpis in eu
+              mi. Ante in nibh mauris cursus mattis. Suspendisse sed nisi lacus
+              sed viverra tellus in hac habitasse. Sed vulputate mi sit amet
+              mauris commodo quis. Non arcu risus quis varius quam quisque id
+              diam. Amet tellus cras adipiscing enim eu. Risus in hendrerit
+              gravida rutrum quisque non tellus orci. Vivamus arcu felis
+              bibendum ut tristique et. Ac tincidunt vitae semper quis lectus
+              nulla at volutpat. Ligula ullamcorper malesuada proin libero nunc
+              consequat. Enim tortor at auctor urna nunc id. Consectetur
+              adipiscing elit ut aliquam purus sit. A lacus vestibulum sed arcu
+              non odio euismod lacinia at. In eu mi bibendum neque egestas.
+              Pulvinar etiam non quam lacus suspendisse faucibus. In metus
+              vulputate eu scelerisque felis. Ut etiam sit amet nisl purus in
+              mollis. Aliquam purus sit amet luctus venenatis lectus magna
+              fringilla. Sit amet mauris commodo quis imperdiet massa tincidunt.
+              Libero id faucibus nisl tincidunt eget nullam non nisi. Pretium
+              quam vulputate dignissim suspendisse. Maecenas sed enim ut sem
+              viverra aliquet eget. Vel pretium lectus quam id leo in vitae. Sit
+              amet tellus cras adipiscing enim eu turpis. Vel risus commodo
+              viverra maecenas accumsan lacus vel. Quis imperdiet massa
+              tincidunt nunc. Eget mauris pharetra et ultrices neque. Fermentum
+              et sollicitudin ac orci phasellus.
+            </p>
+          </div>
+          <img src="story.png" alt="Story" class="m-4 w-[15rem] rounded-full" />
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="w-full border border-grey-400 opacity-55"></div>
+      <div id="menu" class="mt-8 flex justify-center px-32">
+        <div>
+          <div class="mt-8 flex justify-center">
+            <div class="text-[#F8FAE5] rounded-xl mx-4 shadow-md w-[80%]">
+              <div class="text-center">
+                <h1 class="text-8xl font-bold mb-2">tmh's coffees</h1>
+              </div>
+            </div>
+          </div>
+          <div class="text-[#F8FAE5] rounded-xl mx-4 w-[80%] flex">
+            <img src="espresso.png" alt="Espresso" class="m-4 w-[15rem]" />
+            <div class="p-4">
+              <h2 class="text-5xl font-bold mb-2">Espresso</h2>
+              <p class="text-xl">
+                Espresso is a concentrated coffee beverage brewed by forcing a
+                small amount of nearly boiling water through finely-ground
+                coffee beans. It is known for its intense and robust flavor,
+                providing a quick and powerful caffeine kick.
+              </p>
+              <div class="flex mt-4">
+                <div class="text-2xl font-semibold">Price: $3.99</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-[#F8FAE5] rounded-xl mx-4 w-[80%] flex">
+            <img src="americano.png" alt="Americano" class="m-4 w-[15rem]" />
+            <div class="p-4">
+              <h2 class="text-5xl font-bold mb-2">Americano</h2>
+              <p class="text-xl">
+                Americano is a popular espresso-based coffee drink made by
+                diluting espresso with hot water. It has a similar strength to
+                traditional brewed coffee but with a distinct flavor profile.
+              </p>
+              <div class="flex mt-4">
+                <div class="text-2xl font-semibold">Price: $3.99</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-[#F8FAE5] rounded-xl mx-4 w-[80%] flex">
+            <img src="cappuccino.png" alt="Cappuccino" class="m-4 w-[15rem]" />
+            <div class="p-4">
+              <h2 class="text-5xl font-bold mb-2">Cappuccino</h2>
+              <p class="text-xl">
+                Cappuccino is a classic Italian coffee drink made with equal
+                parts espresso, steamed milk, and milk foam. It is known for its
+                creamy texture and balanced flavors.
+              </p>
+              <div class="flex mt-4">
+                <div class="text-2xl font-semibold">Price: $4.99</div>
+              </div>
+            </div>
+          </div>
+          <div class="text-[#F8FAE5] rounded-xl mx-4 w-[80%] flex">
+            <img src="latte.png" alt="Latte" class="m-4 w-[15rem]" />
+            <div class="p-4">
+              <h2 class="text-5xl font-bold mb-2">Latte</h2>
+              <p class="text-xl">
+                Latte is a popular coffee drink made with espresso and steamed
+                milk. It has a smooth and creamy texture, often topped with a
+                layer of milk foam and sometimes flavored with syrups.
+              </p>
+              <div class="flex mt-4">
+                <div class="text-2xl font-semibold">Price: $4.99</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full border border-grey-400 opacity-55"></div>
+    <div id="location" class="">
+      <div class="mt-8 flex justify-center">
+        <div class="text-[#F8FAE5] rounded-xl mx-4 shadow-md w-[80%]">
+          <div class="text-center">
+            <h1 class="text-8xl font-bold mb-2">tmh's location</h1>
+          </div>
+        </div>
+      </div>
+      <div id="map" class="mt-8 mb-8 flex justify-center">
+        <img src="location.png" alt="Map" class="w-[60%] h-[60%] mt-8 mb-8" />
+      </div>
+      <div class="mx-6 text-5xl text-[#F8FAE5] font-bold">
+        <h1>
+          Addresses
+        </h1>
+        <p class="text-2xl font-semibold">
+          120 South Seattle, WA 98104
+        </p>
+      </div>
+      <div class="w-full border border-grey-400 opacity-55"></div>
+    </div>
+    <div id="stats">
+      <div class="mt-8 flex justify-center">
+        <div class="text-[#F8FAE5] rounded-xl mx-4 shadow-md w-[80%]">
+          <div class="text-center">
+            <h1 class="text-8xl font-bold mb-2 shadow-md">tmh ratings</h1>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 flex justify-center">
+        <div
+          class="p-5 bg-[#5C4B3F] justify-start w-[60%] flex rounded-xl border border-[#5C4B3F]"
+        >
+          <div>
+            <div class="mx-3 italic text-4xl text-[#F8FAE5]">
+              <h1>Espresso</h1>
+            </div>
+            <div class="mx-6 text-2xl text-[#F8FAE5]">
+              <p>
+                Espresso is a concentrated coffee beverage brewed by forcing a
+                small amount of nearly boiling water through finely-ground
+                coffee beans. It is known for its intense and robust flavor,
+                providing a quick and powerful caffeine kick.
+              </p>
+            </div>
+            <div class="flex">
+              <img src="espresso.png" class="w-[18rem] h-[18rem] mx-3 mt-6" />
+              <div class="mx-3 mt-4 w-full">
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold">
+                  Creaminess
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[60%]">
+                    <div class="text-2xl mx-6">60%</div>
+                  </div>
+                </div>
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold mt-3">
+                  Bitterness
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[50%]">
+                    <div class="text-2xl mx-6">50%</div>
+                  </div>
+                </div>
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold mt-3">
+                  Sweetness
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[30%]">
+                    <div class="text-2xl mx-6">30%</div>
+                  </div>
+                </div>
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold mt-3">
+                  Caffeine
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[80%]">
+                    <div class="text-2xl mx-6">80%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      ,
+      <div class="mt-8 flex justify-center">
+        <div
+          class="p-5 bg-[#5C4B3F] justify-start w-[60%] flex rounded-xl border border-[#5C4B3F]"
+        >
+          <div>
+            <div class="mx-3 italic text-4xl text-[#F8FAE5]">
+              <h1>Latte</h1>
+            </div>
+            <div class="mx-6 text-2xl text-[#F8FAE5]">
+              <p>
+                Latte is a coffee drink made with espresso and steamed milk. It
+                is often topped with a small amount of frothed milk, creating a
+                creamy and smooth texture. The balance of coffee and milk makes
+                it a popular and comforting choice.
+              </p>
+            </div>
+            <div class="flex">
+              <img src="latte.png" class="w-[18rem] h-[18rem] mx-3 mt-6" />
+              <div class="mx-3 mt-4 w-full">
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold">
+                  Creaminess
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[70%]">
+                    <div class="text-2xl mx-6">70%</div>
+                  </div>
+                </div>
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold mt-3">
+                  Bitterness
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[40%]">
+                    <div class="text-2xl mx-6">40%</div>
+                  </div>
+                </div>
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold mt-3">
+                  Sweetness
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[50%]">
+                    <div class="text-2xl mx-6">50%</div>
+                  </div>
+                </div>
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold mt-3">
+                  Caffeine
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[30%]">
+                    <div class="text-2xl mx-6">30%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 flex justify-center">
+        <div
+          class="p-5 bg-[#5C4B3F] justify-start w-[60%] flex rounded-xl border border-[#5C4B3F] mb-4"
+        >
+          <div>
+            <div class="mx-3 italic text-4xl text-[#F8FAE5]">
+              <h1>Cappuccino</h1>
+            </div>
+            <div class="mx-6 text-2xl text-[#F8FAE5]">
+              <p>
+                Cappuccino is a coffee drink that consists of a shot of espresso
+                and equal parts of steamed milk and milk foam. It has a strong
+                and rich flavor with a creamy and frothy texture.
+              </p>
+            </div>
+            <div class="flex">
+              <img src="cappuccino.png" class="w-[18rem] h-[18rem] mx-3 mt-6" />
+              <div class="mx-3 mt-4 w-full">
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold">
+                  Creaminess
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[65%]">
+                    <div class="text-2xl mx-6">65%</div>
+                  </div>
+                </div>
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold mt-3">
+                  Bitterness
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[40%]">
+                    <div class="text-2xl mx-6">40%</div>
+                  </div>
+                </div>
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold mt-3">
+                  Sweetness
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[30%]">
+                    <div class="text-2xl mx-6">30%</div>
+                  </div>
+                </div>
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold mt-3">
+                  Caffeine
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[50%]">
+                    <div class="text-2xl mx-6">50%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 flex justify-center">
+        <div
+          class="p-5 bg-[#5C4B3F] justify-start w-[60%] flex rounded-xl border border-[#5C4B3F] mb-4"
+        >
+          <div>
+            <div class="mx-3 italic text-4xl text-[#F8FAE5]">
+              <h1>Americano</h1>
+            </div>
+            <div class="mx-6 text-2xl text-[#F8FAE5]">
+              <p>
+                Americano is a coffee made by diluting a shot of espresso with
+                hot water, giving it a similar strength to traditional drip
+                coffee but different flavor characteristics. It has a bold and
+                straightforward taste.
+              </p>
+            </div>
+            <div class="flex">
+              <img src="americano.png" class="w-[18rem] h-[18rem] mx-3 mt-6" />
+              <div class="mx-3 mt-4 w-full">
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold">
+                  Creaminess
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[25%]">
+                    <div class="text-2xl mx-6">25%</div>
+                  </div>
+                </div>
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold mt-3">
+                  Bitterness
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[60%]">
+                    <div class="text-2xl mx-6">60%</div>
+                  </div>
+                </div>
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold mt-3">
+                  Sweetness
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[10%]">
+                    <div class="text-2xl mx-6">10%</div>
+                  </div>
+                </div>
+                <div class="text-2xl text-[#F8FAE5] mx-3 font-semibold mt-3">
+                  Caffeine
+                </div>
+                <div class="w-full bg-gray-200 rounded-full">
+                  <div class="h-8 bg-green-500 rounded-full w-[80%]">
+                    <div class="text-2xl mx-6">80%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fixed justify-end bottom-0 right-0 p-4">tmh's experiment</div>
+  </body>
+</html>
